@@ -190,12 +190,18 @@ This prevents metric drift across views.
 
 ---
 
-```markdown
-## Screenshots
+### 2️⃣ While we’re here: fix the two small content issues
 
-![Overview](docs/screenshots/overview.png)
-![Performance Snapshot](docs/screenshots/performance.png)
+- You have **two `## Screenshots` headers → keep only one**
+- One image path is wrong (`docs/company_trends.png` instead of `docs/screenshots/...`)
 
+---
+
+## ✅ Final, correct version (copy–paste this)
+
+Paste this **directly into README.md with NO backticks**:
+
+```md
 ## Screenshots
 
 ### Portfolio Overview
@@ -211,7 +217,7 @@ Portfolio and asset-level performance metrics including IRR, MOIC, and value cre
 ### Company Monitoring Table
 
 Operating, leverage, and return metrics used for ongoing asset monitoring.
-![Company Trends](docs/screenshots/company_trends.png)
+![Company Monitoring Table](docs/screenshots/company_trends.png)
 
 ### Value Creation Analysis
 
@@ -221,7 +227,7 @@ Decomposition of returns into growth, margin expansion, and multiple expansion.
 ### Company Trends & Drilldown
 
 Historical trends for revenue, EBITDA, margins, and leverage at the asset level.
-![Company Trends](docs/company_trends.png)
+![Company Trends](docs/screenshots/company_trends.png)
 
 ### Risk & Data Health Flags
 
