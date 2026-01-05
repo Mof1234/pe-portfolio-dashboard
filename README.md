@@ -190,8 +190,6 @@ This prevents metric drift across views.
 
 ---
 
-## 🖼️ Screenshots
-
 ```markdown
 ## Screenshots
 
