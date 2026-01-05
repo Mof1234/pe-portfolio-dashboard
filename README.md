@@ -201,22 +201,22 @@ This prevents metric drift across views.
 ### Portfolio Overview
 
 End-to-end view of fund-level KPIs, portfolio composition, and monitoring table.
-![Portfolio Overview](docs/overview.png)
+![Portfolio Overview](docs/screenshots/overview.png)
 
 ### Performance Snapshot
 
 Portfolio and asset-level performance metrics including IRR, MOIC, and value creation.
-![Performance Snapshot](docs/performance.png)
+![Performance Snapshot](docs/screenshots/performance.png)
 
 ### Company Monitoring Table
 
 Operating, leverage, and return metrics used for ongoing asset monitoring.
-![Company Table](docs/company_table.png)
+![Company Trends](docs/screenshots/company_trends.png)
 
 ### Value Creation Analysis
 
 Decomposition of returns into growth, margin expansion, and multiple expansion.
-![Value Creation](docs/value_creation.png)
+![Value Creation](docs/screenshots/value_creation.png)
 
 ### Company Trends & Drilldown
 
@@ -226,5 +226,5 @@ Historical trends for revenue, EBITDA, margins, and leverage at the asset level.
 ### Risk & Data Health Flags
 
 Automated flags highlighting underperformance, leverage risk, and data quality issues.
-![Risk Flags](docs/risk_flags.png)
+![Risk Flags](docs/screenshots/risk_flags.png)
 ```
