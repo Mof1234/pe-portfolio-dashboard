@@ -197,8 +197,6 @@ This prevents metric drift across views.
 
 ---
 
-## ✅ Final, correct version (copy–paste this)
-
 ## Screenshots
 
 ### Portfolio Overview
