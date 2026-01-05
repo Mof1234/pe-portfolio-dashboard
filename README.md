@@ -199,9 +199,6 @@ This prevents metric drift across views.
 
 ## ✅ Final, correct version (copy–paste this)
 
-Paste this **directly into README.md with NO backticks**:
-
-```md
 ## Screenshots
 
 ### Portfolio Overview
@@ -233,4 +230,7 @@ Historical trends for revenue, EBITDA, margins, and leverage at the asset level.
 
 Automated flags highlighting underperformance, leverage risk, and data quality issues.
 ![Risk Flags](docs/screenshots/risk_flags.png)
+
+```
+
 ```
