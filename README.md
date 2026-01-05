@@ -1,158 +1,232 @@
+# 📊 PE Portfolio Performance Dashboard
+
+![Status](https://img.shields.io/badge/status-active-success)
+![Python](https://img.shields.io/badge/python-3.10%2B-blue)
+![Streamlit](https://img.shields.io/badge/streamlit-app-red)
+![Finance](https://img.shields.io/badge/domain-private%20equity-black)
+
+---
+
+## 🧠 Overview
+
+The **PE Portfolio Performance Dashboard** is a **Private Equity–style portfolio monitoring tool** designed to mirror how institutional PE firms track:
+
+- Fund performance
+- Portfolio company operating health
+- Value creation drivers
+- Cashflow accuracy
+- Risk and leverage exposure
+
+It follows **standard PE conventions** used by investment teams for portfolio reviews, IC validation, and ongoing asset monitoring.
+
+---
+
+## 🎯 Purpose
+
+This dashboard is built to resemble **internal PE portfolio dashboards**, enabling users to:
+
+- Validate **fund-level KPIs** (TVPI, DPI, IRR)
+- Monitor **company-level operating trends**
+- Attribute **value creation** across assets
+- Track **cashflows and valuation marks**
+- Flag **risk concentrations** early
+
+---
+
+## 🚀 Key Features
+
+### 🏦 Fund-Level Performance (Portfolio View)
+
+- **Paid-In Capital (Contributions)**
+- **Distributions**
+- **Net Asset Value (NAV)**
+- **TVPI / DPI / RVPI**
+- **Fund IRR**
+  - XIRR using dated cashflows
+  - Terminal NAV added at as-of date
+
+---
+
+### 🏢 Company-Level Monitoring (Asset View)
+
+#### 📋 Comparison Table
+
+- Latest Revenue & EBITDA
+- EBITDA Margin
+- Net Leverage
+- MOIC & IRR
+- Revenue CAGR
+
+#### 📈 Operating Performance
+
+- Portfolio-wide **Revenue & EBITDA time series**
+
+#### 🔄 Value Creation Bridge
+
+#### ⚠️ Risk View
+
+- Leverage visualization
+- Automated risk flags:
+  - High leverage
+  - Low margin
+
+#### 💡 Key Insights
+
+- Top MOIC contributor
+- Highest leverage asset
+- Margin leader
+- Laggard identification
+
+---
+
+## 🧱 Data Model
+
+All inputs are modeled as **normalized tables**, consistent with PE portfolio data architecture.
+
+### 📂 CSV Inputs
+
+- **`portfolio_companies.csv`**  
+  Company master data (sector, entry date, ownership, etc.)
+
+- **`financials.csv`**  
+  Quarterly operating data:
+
+  - Revenue
+  - EBITDA
+  - Capex
+  - Net Debt
+
+- **`valuation.csv`**  
+  Valuation marks:
+
+  - Equity Value
+  - (Optional) Enterprise Value / Multiples
+
+- **`capital_flows.csv`**  
+  Dated cashflows used for MOIC and IRR
+
+---
+
+## 💵 Currency & Cashflow Conventions
+
+### Currency
+
+- All values stored in **USD**
+- Displayed as **USD mm** in the app
+
+### Cashflows (PE Standard)
+
+- **Contributions** → negative (cash out)
+- **Distributions** → positive (cash in)
+
+---
+
+## 📐 Metric Definitions
+
+### Fund-Level
+
+- **Paid-In** = −Σ(Contributions)
+- **Distributions** = Σ(Distributions)
+- **NAV** = Σ(latest equity value per company)
+- **DPI** = Distributions / Paid-In
+- **RVPI** = NAV / Paid-In
+- **TVPI** = (Distributions + NAV) / Paid-In
+- **IRR** = XIRR(cashflows + terminal NAV)
+
+---
+
+### Company-Level
+
+- **MOIC** = (Realized + Unrealized) / Invested Capital
+- **IRR** = XIRR(company cashflows + terminal equity value)
+- **Revenue CAGR** = Annualized growth between first & last quarters
+- **EBITDA Margin** = EBITDA / Revenue (latest quarter)
+- **Leverage** = Net Debt / EBITDA (latest quarter)
+
+---
+
+## 🛠️ Key Implementation Decisions
+
+### ✅ Single Source of Truth Filtering
+
+All charts and KPIs use the same filtered datasets:
+
+- `companies_f`
+- `financials_f`
+- `valuation_f`
+- `capital_flows_f`
+
+This prevents metric drift across views.
+
+---
+
+### 🔄 Schema Normalization (`data_prep.py`)
+
+- Column names normalized to:
+  - lowercase
+  - snake_case
+- Common aliases mapped:
+  - `period_end`
+  - `as_of_date`
+  - `equity_value`
+  - `flow_type`
+  - `amount`
+
+---
+
+### 📊 Correct Fund KPI Construction
+
+- Paid-In / Distributions → **cashflows only**
+- NAV → **valuation marks only**
+- Fund IRR → includes **explicit terminal NAV**
+
+---
+
+### 🎨 UI & Stability Fixes
+
+- Risk View and Key Insights restored in **Overview tab**
+- All Streamlit elements use **unique keys**
+- Prevents `DuplicateElementId` errors
+
+---
+
+## 🖼️ Screenshots
+
+```markdown
+## Screenshots
+
+![Overview](docs/screenshots/overview.png)
+![Performance Snapshot](docs/screenshots/performance.png)
+
 ## Screenshots
 
 ### Portfolio Overview
 
-![Overview](docs/screenshots/overview.png)
+End-to-end view of fund-level KPIs, portfolio composition, and monitoring table.
+![Portfolio Overview](docs/overview.png)
 
 ### Performance Snapshot
 
-![Performance Snapshot](docs/screenshots/performance.png)
+Portfolio and asset-level performance metrics including IRR, MOIC, and value creation.
+![Performance Snapshot](docs/performance.png)
 
-PE Portfolio Performance Dashboard
-Purpose
+### Company Monitoring Table
 
-This project is a Private Equity-style portfolio monitoring dashboard that tracks fund-level performance, value creation, and operating/risk metrics across portfolio companies. It is built to resemble how PE teams validate portfolio data and monitor value drivers: cashflows, valuation marks, operating trends, and leverage.
+Operating, leverage, and return metrics used for ongoing asset monitoring.
+![Company Table](docs/company_table.png)
 
-What it includes
-Portfolio-level KPIs (fund view)
+### Value Creation Analysis
 
-Paid-in (Contributions)
+Decomposition of returns into growth, margin expansion, and multiple expansion.
+![Value Creation](docs/value_creation.png)
 
-Distributions
+### Company Trends & Drilldown
 
-NAV (unrealized value from valuation marks)
+Historical trends for revenue, EBITDA, margins, and leverage at the asset level.
+![Company Trends](docs/company_trends.png)
 
-TVPI / DPI / RVPI
+### Risk & Data Health Flags
 
-Fund IRR (XIRR on dated cashflows + terminal NAV)
-
-Company monitoring (asset view)
-
-Company comparison table: latest revenue/EBITDA, margin, leverage, MOIC, IRR, growth (CAGR)
-
-Operating performance trends: portfolio revenue + EBITDA time series
-
-Value creation bridge: entry equity → EBITDA growth → multiple change → deleveraging → current equity
-
-Risk view: leverage chart + risk flags (high leverage, low margin)
-
-Key Insights: quick “leader/laggard” callouts (top MOIC, highest leverage, margin leader, etc.)
-
-Data model
-
-Inputs are modeled as separate tables (CSV):
-
-portfolio_companies.csv: company master (sector, entry date, ownership, etc.)
-
-financials.csv: quarterly revenue / EBITDA / capex / net debt
-
-valuation.csv: valuation marks (equity value + optional EV/multiples)
-
-capital_flows.csv: dated cashflows (for XIRR and MOIC)
-
-Currency conventions
-
-All currency values should be stored as USD (either absolute dollars or USD mm).
-
-The app displays headline values in USD mm.
-
-Cashflows follow PE convention:
-
-Contributions are stored as negative cashflows (cash out)
-
-Distributions are stored as positive cashflows (cash in)
-
-Metric definitions
-Fund-level
-
-Paid-in = −Σ(Contributions)
-
-Distributions = Σ(Distributions)
-
-NAV = Σ(latest equity_value per company as-of date)
-
-DPI = Distributions / Paid-in
-
-RVPI = NAV / Paid-in
-
-TVPI = (Distributions + NAV) / Paid-in
-
-IRR = XIRR(cashflows + terminal NAV)
-
-Company-level
-
-MOIC = (Realized + Unrealized) / Invested (company basis)
-
-IRR = XIRR(company cashflows + terminal equity value)
-
-Revenue CAGR = annualized growth between first and last reported quarters
-
-EBITDA Margin = EBITDA / Revenue (latest quarter)
-
-Leverage = Net Debt / EBITDA (latest quarter)
-
-Key implementation changes (important)
-
-This dashboard includes several changes to make the results accurate and maintainable:
-
-Single source-of-truth filtering
-
-All charts/KPIs use the same filtered frames:
-
-companies_f, financials_f, valuation_f, capital_flows_f
-
-Schema normalization + aliasing in data_prep.py
-
-Column names are normalized (lowercase, underscores).
-
-Common aliases are mapped (e.g., period_end, as_of_date, equity_value, flow_type, amount).
-
-Fund KPIs computed correctly
-
-Fund KPIs use:
-
-Cashflows only (Contribution/Distribution)
-
-NAV from valuation marks (latest equity_value per company)
-
-Fund IRR adds a terminal NAV row at the as-of date
-
-Cashflow visuals cleaned
-
-Operating Trends cashflow chart shows only Contribution/Distribution
-
-(Optional enhancement in progress) A clearer version can plot Paid-in and Distributions as positive bars plus a net line.
-
-Restored Overview sections
-
-Risk View and Key Insights are rendered inside the Overview tab (fixed indentation/layout).
-
-Unique Streamlit keys
-
-All st.plotly_chart() and key widgets use unique keys to avoid DuplicateElement errors.
-
-How to run locally
-python -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-streamlit cache clear
-streamlit run app.py
-
-Troubleshooting
-
-1. DuplicateElementId / DuplicateElementKey
-
-Ensure each st.plotly_chart(..., key="...") has a unique key.
-
-2. “No Contribution/Distribution cashflows”
-
-Your flow_type values may not be normalized to exactly:
-
-Contribution, Distribution
-
-Fix in data_prep.py mapping, then rerun.
-
-3. Data not updating after edits
-
-Clear Streamlit cache:
-streamlit cache clear
+Automated flags highlighting underperformance, leverage risk, and data quality issues.
+![Risk Flags](docs/risk_flags.png)
+```
