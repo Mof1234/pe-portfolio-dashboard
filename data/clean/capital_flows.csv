@@ -1,0 +1,25 @@
+company_id,date,flow_type,amount,security,notes
+C001,2023-03-31,Contribution,-17.76091894573821,Equity,Entry investment
+C001,2024-09-30,Distribution,4.916424462822734,Dividend Recap,Partial recap
+C001,2025-12-31,Distribution,112.82961655802745,Sale,Exit proceeds
+C002,2023-03-31,Contribution,-9.353398799971764,Equity,Entry investment
+C002,2023-12-31,Contribution,-2.3931086678411106,Equity,Follow-on / add-on
+C002,2025-12-31,Distribution,78.55499179013948,Sale,Exit proceeds
+C003,2023-03-31,Contribution,-11.707951330589353,Equity,Entry investment
+C003,2024-09-30,Distribution,3.1911408390612515,Dividend Recap,Partial recap
+C003,2025-12-31,Distribution,65.59651514002226,Sale,Exit proceeds
+C004,2023-03-31,Contribution,-4.566966708399595,Equity,Entry investment
+C004,2025-12-31,Distribution,13.87187954383617,Sale,Exit proceeds
+C005,2023-03-31,Contribution,-36.18996131900037,Equity,Entry investment
+C005,2025-12-31,Distribution,142.03553358762613,Sale,Exit proceeds
+C006,2023-03-31,Contribution,-5.029574321890117,Equity,Entry investment
+C006,2025-12-31,Distribution,16.249726658079176,Sale,Exit proceeds
+C007,2023-03-31,Contribution,-14.509068114546206,Equity,Entry investment
+C007,2025-12-31,Distribution,108.39636075880695,Sale,Exit proceeds
+C008,2023-03-31,Contribution,-12.75326532139514,Equity,Entry investment
+C008,2025-12-31,Distribution,83.88232420512534,Sale,Exit proceeds
+C009,2023-03-31,Contribution,-10.926770342928984,Equity,Entry investment
+C009,2024-09-30,Distribution,3.0564048689970056,Dividend Recap,Partial recap
+C009,2025-12-31,Distribution,76.29142913178018,Sale,Exit proceeds
+C010,2023-03-31,Contribution,-5.9919549518780295,Equity,Entry investment
+C010,2025-12-31,Distribution,82.63878281261799,Sale,Exit proceeds

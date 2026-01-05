@@ -1,0 +1,11 @@
+company_id,company_name,platform_name,sector,subsector,region,entry_date,ownership_pct,status,investment_thesis
+C001,Atlas Software,Platform 1,Technology,N/A,North America,2023-03-31,0.9088855203878301,Active,Operational improvement + growth + prudent leverage.
+C002,Summit Healthcare,Platform 1,Healthcare,N/A,Europe,2023-03-31,0.6400828759962368,Active,Operational improvement + growth + prudent leverage.
+C003,Meridian Logistics,Platform 1,Industrials,N/A,North America,2023-03-31,0.8994213781585048,Active,Operational improvement + growth + prudent leverage.
+C004,Evergrid Renewables,Platform 2,Consumer,N/A,North America,2023-03-31,0.8784913673531065,Active,Operational improvement + growth + prudent leverage.
+C005,Bluepeak Consumer Brands,Platform 2,Infrastructure,N/A,Europe,2023-03-31,0.7371739811374883,Active,Operational improvement + growth + prudent leverage.
+C006,Harborline Data Centers,Platform 2,Energy,N/A,North America,2023-03-31,0.6613702448403094,Active,Operational improvement + growth + prudent leverage.
+C007,Pioneer Payments,Platform 3,FinTech,N/A,North America,2023-03-31,0.7280305223530587,Active,Operational improvement + growth + prudent leverage.
+C008,Northbridge Industrial Components,Platform 3,Technology,N/A,North America,2023-03-31,0.771398940829797,Active,Operational improvement + growth + prudent leverage.
+C009,Riftline Mining Services,Platform 3,Healthcare,N/A,Africa,2023-03-31,0.8670647676855012,Active,Operational improvement + growth + prudent leverage.
+C010,Koru AgriTech Solutions,Platform 4,Industrials,N/A,North America,2023-03-31,0.9455840590727539,Active,Operational improvement + growth + prudent leverage.

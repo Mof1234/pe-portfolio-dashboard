@@ -1,0 +1,15 @@
+company_id,company_name,platform_name,sector,subsector,region,entry_date,ownership_pct,status,investment_thesis
+C001,Atlas Software,Platform 1,Technology,N/A,North America,2018-09-30,0.749711144976046,Realized,Staggered-entry buyout with value creation through growth + margins + de-levering.
+C002,Summit Healthcare,Platform 1,Healthcare,N/A,North America,2019-12-31,0.9212844091841478,Realized,Staggered-entry buyout with value creation through growth + margins + de-levering.
+C003,Meridian Logistics,Platform 1,Industrials,N/A,North America,2021-03-31,0.7987534371185532,Active,Staggered-entry buyout with value creation through growth + margins + de-levering.
+C004,Evergrid Renewables,Platform 1,Consumer,N/A,Europe,2019-12-31,0.6601235263044517,Realized,Staggered-entry buyout with value creation through growth + margins + de-levering.
+C005,Bluepeak Consumer Brands,Platform 2,Infrastructure,N/A,North America,2018-12-31,0.7549529253932642,Realized,Staggered-entry buyout with value creation through growth + margins + de-levering.
+C006,Harborline Data Centers,Platform 2,Energy,N/A,North America,2021-12-31,0.631803784532018,Active,Staggered-entry buyout with value creation through growth + margins + de-levering.
+C007,Pioneer Payments,Platform 2,FinTech,N/A,Europe,2021-12-31,0.7866381215796174,Realized,Staggered-entry buyout with value creation through growth + margins + de-levering.
+C008,Northbridge Industrial Components,Platform 2,Technology,N/A,North America,2021-09-30,0.6015038684911405,Active,Staggered-entry buyout with value creation through growth + margins + de-levering.
+C009,Riftline Mining Services,Platform 3,Healthcare,N/A,North America,2018-03-31,0.908377723300147,Realized,Staggered-entry buyout with value creation through growth + margins + de-levering.
+C010,Koru AgriTech,Platform 3,Industrials,N/A,North America,2021-06-30,0.6308864111152153,Realized,Staggered-entry buyout with value creation through growth + margins + de-levering.
+C011,Crescent Networks,Platform 3,Consumer,N/A,North America,2020-06-30,0.6303075816644877,Realized,Staggered-entry buyout with value creation through growth + margins + de-levering.
+C012,Stonegate Diagnostics,Platform 3,Infrastructure,N/A,North America,2019-06-30,0.8289444354945191,Realized,Staggered-entry buyout with value creation through growth + margins + de-levering.
+C013,Redwood Field Services,Platform 4,Energy,N/A,North America,2019-03-31,0.9485743502158681,Realized,Staggered-entry buyout with value creation through growth + margins + de-levering.
+C014,Clearwater Analytics,Platform 4,FinTech,N/A,North America,2021-06-30,0.5636201115788151,Realized,Staggered-entry buyout with value creation through growth + margins + de-levering.
