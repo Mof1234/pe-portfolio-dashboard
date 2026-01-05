@@ -1,3 +1,13 @@
+## Screenshots
+
+### Portfolio Overview
+
+![Overview](docs/screenshots/overview.png)
+
+### Performance Snapshot
+
+![Performance Snapshot](docs/screenshots/performance.png)
+
 PE Portfolio Performance Dashboard
 Purpose
 
